@@ -8,7 +8,7 @@ class Banner(QFrame):
 	"""Banner widget derived from QFrame to contain a preferred sign, brief desc, etc"""
 
 	def __init__(self, parent = None):
-		super.__init__(self, parent)
+		QFrame.__init__(self, parent)
 
 		self.mIcon = QLabel(self)
 		self.mIcon.setScaledContents(True)
