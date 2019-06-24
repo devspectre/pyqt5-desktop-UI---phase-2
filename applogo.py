@@ -5,8 +5,9 @@ from PyQt5.QtGui import *
 
 class AppLogo(QLabel):
 	"""Image widget derived from QLabel to show an app logo"""
+
 	def __init__(self, parent = None):
-		QLabel.__init__(self, parent)
+		super.__init__(self, parent)
 
 		self.img = None
 		self.title = "Undefined"
