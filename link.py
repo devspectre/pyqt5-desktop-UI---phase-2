@@ -9,8 +9,10 @@ class Link(ElideLabel):
 
 	#this signal is emitted when user click on the link with its text as a parameter
 	clicked = pyqtSignal(str)
+
 	#this signal is emitted when user click on the link with its id as a parameter
 	linkActivated = pyqtSignal(int)
+
 	def __init__(self, parent = None, text = "", uri = ""):
 		ElideLabel.__init__(self, parent, text)
 
