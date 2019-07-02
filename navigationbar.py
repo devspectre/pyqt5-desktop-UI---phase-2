@@ -5,7 +5,8 @@ from PyQt5.QtWidgets import *
 from link import Link
 
 class MiddleArrow(QLabel):
-	"""Widget Only for {>} without any action"""
+	""" Widget Only for {>} without any action"""
+
 	def __init__(self, parent = None):
 		QLabel.__init__(self, parent)
 
@@ -16,9 +17,9 @@ class MiddleArrow(QLabel):
 		self.setAlignment(Qt.AlignCenter)
 
 class NavigationBar(QFrame):
-	"""Navigation widget derived from QFrame which contains several link widgets to navigate between pages"""
+	""" Navigation widget derived from QFrame which contains several link widgets to navigate between pages"""
 
-	#this signal is emitted one of links are clicked
+	# this signal is emitted one of links are clicked
 	navigationChanged = pyqtSignal(int)
 	def __init__(self, parent = None):
 		QFrame.__init__(self, parent)
@@ -36,18 +37,18 @@ class NavigationBar(QFrame):
 		self.setStyleSheet("#NavigationBar{background-color: white;}")
 		self.setAutoFillBackground(True)
 
-	#add a navigation link with text, id and uri
+	# add a navigation link with text, id and uri
 	def pushNavigation(self, text, nid = -1, uri = ""):
 		h = QFontMetrics(self.mFont).height()
-		#add an arrow behind the previous navigation, before the current navigation link
+		# add an arrow behind the previous navigation, before the current navigation link
 		if len(self.mNavList) != 0:
 			arrow = MiddleArrow(self)
 			arrow.setFixedSize(h, h)
 			self.mLayout.addWidget(arrow, 0, Qt.AlignLeft)
 			self.mArrowList.append(arrow)
 
-		#By default, the last navigation link is disabled
-		#So you need to enable previous navigation link when a new one is attached to it
+		# By default, the last navigation link is disabled
+		# So you need to enable previous navigation link when a new one is attached to it
 		if len(self.mNavList) > 0:
 			self.mNavList[len(self.mNavList) - 1].setEnabled(True)
 
@@ -55,7 +56,7 @@ class NavigationBar(QFrame):
 			self.mAssignedId += 1
 			nid = self.mAssignedId
 
-		#add a new link for navigation
+		# add a new link for navigation
 		newNav = Link(self, text)
 		newNav.setId(nid)
 		newNav.setUri(uri)
@@ -69,9 +70,9 @@ class NavigationBar(QFrame):
 		self.mNavList.append(newNav)
 		self.mLayout.addWidget(newNav, 0, Qt.AlignLeft)
 
-	#remove all navigation links whose indices are equal or bigger than given index
+	# remove all navigation links whose indices are equal or bigger than given index
 	def popNavigation(self, index):
-		#remove the navigation link first
+		# remove the navigation link first
 		if len(self.mNavList) > index:
 			for nav in reversed(self.mNavList):
 				if self.mNavList.index(nav) == index:
@@ -80,7 +81,7 @@ class NavigationBar(QFrame):
 				self.mNavList.remove(nav)
 				nav.setParent(None)
 
-		#remove the arrow then
+		# remove the arrow then
 		if len(self.mArrowList) > index - 1:
 			for arrow in reversed(self.mArrowList):
 				if self.mArrowList.index(arrow) == index - 1:
@@ -89,8 +90,8 @@ class NavigationBar(QFrame):
 				self.mArrowList.remove(arrow)
 				arrow.setParent(None)
 
-	#this slot is called when a navigation is clicked
-	#it removes all the links behind it
+	# this slot is called when a navigation is clicked
+	# it removes all the links behind it
 	@pyqtSlot(int)
 	def onNavigationClicked(self, id):
 		for nav in self.mNavList:
@@ -99,7 +100,7 @@ class NavigationBar(QFrame):
 				self.popNavigation(index)
 				self.navigationChanged.emit(nav.getId())
 
-	#set the font of all links inside navigation bar
+	# set the font of all links inside navigation bar
 	def setFont(self, font):
 		self.mFont = font
 		for nav in self.mNavList:

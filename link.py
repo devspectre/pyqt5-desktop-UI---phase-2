@@ -5,12 +5,12 @@ from PyQt5.QtGui import *
 from elidelabel import ElideLabel
 
 class Link(ElideLabel):
-	"""Link widget with text that is simliar to <a> tag in html"""
+	""" Link widget with text that is simliar to <a> tag in html"""
 
-	#this signal is emitted when user click on the link with its text as a parameter
+	# this signal is emitted when user click on the link with its text as a parameter
 	clicked = pyqtSignal(str)
 
-	#this signal is emitted when user click on the link with its id as a parameter
+	# this signal is emitted when user click on the link with its id as a parameter
 	linkActivated = pyqtSignal(int)
 
 	def __init__(self, parent = None, text = "", uri = ""):
@@ -30,7 +30,7 @@ class Link(ElideLabel):
 		self.setAlignment(Qt.AlignLeft)
 		self.setCursor(Qt.PointingHandCursor)
 
-	#enable/disable mouse effect
+	# enable/disable mouse effect
 	def setEnabled(self, flag):
 		self.mEnabled = flag
 

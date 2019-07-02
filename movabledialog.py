@@ -4,7 +4,8 @@ from PyQt5.QtCore import QPoint
 from PyQt5.QtWidgets import QDialog
 
 class MovableDialog(QDialog):
-	"""Dialog widget derived from Dialog which is movable with mouse dragging"""
+	""" Dialog widget derived from Dialog which is movable with mouse dragging"""
+
 	def __init__(self, parent = None):
 		self.mIsPressed = False
 		self.mXDiff = 0

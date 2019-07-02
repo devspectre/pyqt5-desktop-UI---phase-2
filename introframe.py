@@ -6,7 +6,7 @@ from banner import Banner
 from linklist import LinkList
 from enum import Enum
 
-#styles for customized vertical scroll bar
+# styles for customized vertical scroll bar
 class VSCROLL_STYLE(Enum):
 	THIN = """
 		QScrollBar:vertical {
@@ -97,7 +97,7 @@ class VSCROLL_STYLE(Enum):
         }"""
 
 class IntroFrame(QFrame):
-	"""Customized widget derived from QFrame which contains placeholder for banner, 
+	""" Customized widget derived from QFrame which contains placeholder for banner, 
 		app intro and app description as well as learn more
 		app description widget is capable of both loading plain text and html file
 	"""
@@ -137,7 +137,7 @@ class IntroFrame(QFrame):
 	def setBannerIcon(self, icon):
 		self.mBanner.setBannerIcon(icon)
 
-	#var color should be a string value ends with semicolon(;), ex: rgba(0, 125, 225, 255); or white;
+	# var color should be a string value ends with semicolon(;), ex: rgba(0, 125, 225, 255); or white;
 	def setBackgroundColor(self, color):
 		self.mBanner.setBackgroundColor(color)
 
@@ -147,7 +147,7 @@ class IntroFrame(QFrame):
 	def setBannerTextFont(self, font):
 		self.mBanner.setBannerTextFont(font)
 
-	#var color should be a string value ends with semicolon(;), ex: rgba(0, 125, 225, 255); or white;
+	# var color should be a string value ends with semicolon(;), ex: rgba(0, 125, 225, 255); or white;
 	def setBannerTextColor(self, color):
 		self.mBanner.setBannerTextColor
 
@@ -157,7 +157,7 @@ class IntroFrame(QFrame):
 	def setBannerLinkFont(self, font):
 		self.mBanner.setBannerLinkFont(font)
 
-	#var color should be a string value ends with semicolon(;), ex: rgba(0, 125, 225, 255); or white;
+	# var color should be a string value ends with semicolon(;), ex: rgba(0, 125, 225, 255); or white;
 	def setBannerLinkColor(self, color):
 		self.mBanner.setBannerLinkColor(color)
 
@@ -170,15 +170,15 @@ class IntroFrame(QFrame):
 	def setIntroTitleColor(self, color):
 		self.mIntroTitle.setStyleSheet("#IntroTitle{color: " + color + "}")
 
-	#set plain text as description
+	# set plain text as description
 	def setIntroDescText(self, text):
 		self.mIntroDesc.setText(text)
 
-	#set html string rather than plain text
+	# set html string rather than plain text
 	def setIntroDescHtml(self, html):
 		self.mIntroDesc.setHtml(html)
 
-	#load html from a file instead of plain text
+	# load html from a file instead of plain text
 	def setIntroDescHtmlFile(self, filePath):
 		file = QFile(filePath)
 		if file.open(QIODevice.ReadOnly):

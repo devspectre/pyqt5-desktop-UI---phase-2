@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import *
 from link import Link
 
 class Banner(QFrame):
-	"""Banner widget derived from QFrame to contain a preferred sign, brief desc, etc"""
+	""" Banner widget derived from QFrame to contain a preferred sign, brief desc, etc"""
 
 	def __init__(self, parent = None):
 		QFrame.__init__(self, parent)
@@ -42,14 +42,14 @@ class Banner(QFrame):
 		QFrame.setFixedHeight(self, ah)
 		pixmap = self.mIcon.pixmap()
 		pw, ph = pixmap.width(), pixmap.height()
-		#resize the logo icon according to the resized widget, keeping its aspect ratio
+		# resize the logo icon according to the resized widget, keeping its aspect ratio
 		self.mIcon.setFixedSize(int(ah * (pw / ph)), ah)
 
-	#set icon of the banner, parameter icon should be a QPixmap 
+	# set icon of the banner, parameter icon should be a QPixmap 
 	def setBannerIcon(self, icon):
 		self.mIcon.setPixmap(icon)
 
-	#var color should be a string value ends with semicolon(;), ex: rgba(0, 125, 225, 255); or white;
+	# var color should be a string value ends with semicolon(;), ex: rgba(0, 125, 225, 255); or white;
 	def setBackgroundColor(self, color):
 		self.setStyleSheet("#Banner{background-color: " + color + "}")
 
@@ -59,7 +59,7 @@ class Banner(QFrame):
 	def setBannerTextFont(self, font):
 		self.mText.setFont(font)
 
-	#var color should be a string value ends with semicolon(;), ex: rgba(0, 125, 225, 255); or white;
+	# var color should be a string value ends with semicolon(;), ex: rgba(0, 125, 225, 255); or white;
 	def setBannerTextColor(self, color):
 		self.mText.setStyleSheet("#BannerText{color: " + color + "}")
 
@@ -69,7 +69,7 @@ class Banner(QFrame):
 	def setBannerLinkFont(self, font):
 		self.mLink.setFont(font)
 
-	#var color should be a string value ends with semicolon(;), ex: rgba(0, 125, 225, 255); or white;
+	# var color should be a string value ends with semicolon(;), ex: rgba(0, 125, 225, 255); or white;
 	def setBannerLinkColor(self, color):
 		self.mLink.setDefaultColor(color)
 		self.mLink.setHoverColor(color)
