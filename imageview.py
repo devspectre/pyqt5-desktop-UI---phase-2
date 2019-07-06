@@ -7,7 +7,7 @@ from thumbnail import Thumbnail
 from fullimageview import FullImageView
 
 class ImageView(QFrame):
-	"""ImageViewer widget derived from QFrame which contains a main image frame to show selected image and small thumbnail frames"""
+	""" ImageViewer widget derived from QFrame which contains a main image frame to show selected image and small thumbnail frames"""
 	def __init__(self, parent = None):
 		QFrame.__init__(self, parent)
 
@@ -33,17 +33,17 @@ class ImageView(QFrame):
 		self.mPresenter.setFixedSize(w, h)
 		self.mThumbs.setFixedSize(w, h)
 
-	#sets spacing between presenter and thumbview
+	# sets spacing between presenter and thumbview
 	def setSpacingBetween(self, spacing):
 		self.mLayout.setSpacing(spacing)
 
-	#adds a new thumbnail to thumbview
+	# adds a new thumbnail to thumbview
 	def addThumbnail(self, pix, uri = "", thumb_type = 0):
 		self.mThumbs.addThumbnailByInfo(pix, uri, thumb_type)
 		if self.mThumbs.count() == 1:
 			self.mThumbs.setActiveThumbByIndex(0)
 
-	#this slot is called when user click on thumbnail of thumbview
+	# this slot is called when user click on thumbnail of thumbview
 	@pyqtSlot(int)
 	def onItemChanged(self, id):
 		imgPath, uri, thumb_type = self.mThumbs.getThumbInfo(id)
@@ -58,7 +58,7 @@ class ImageView(QFrame):
 	def OnNextRequested(self):
 		self.mThumbs.nextThumb()
 
-	#this slot is called when user click on presenter
+	# this slot is called when user click on presenter
 	@pyqtSlot()
 	def onFullscreenView(self):
 		if len(self.mPresenter.getImagePath()) == 0:

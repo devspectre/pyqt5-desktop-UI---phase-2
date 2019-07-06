@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from enum import Enum
 
-#styles for customized horizontal scroll bar
+# styles for customized horizontal scroll bar
 class HSCROLL_STYLE(Enum):
 	SILENT = """
 		QScrollBar:horizontal {
@@ -139,7 +139,7 @@ class HSCROLL_STYLE(Enum):
         }"""
 
 class HorizontalScrollArea(QScrollArea):
-	"""Scroll area derived from QScrollArea only shows horizontal scroll bar whose
+	""" Scroll area derived from QScrollArea only shows horizontal scroll bar whose
 		width has to be adjusted to fit the screen resolution"""
 
 	def __init__(self, parent = None):
@@ -154,16 +154,16 @@ class HorizontalScrollArea(QScrollArea):
 		self.horizontalScrollBar().setStyleSheet(self.style)
 		self.horizontalScrollBar().setEnabled(True)
 
-	#this is necessary for users to scroll horizontally with mouse on frame.
+	# this is necessary for users to scroll horizontally with mouse on frame.
 	def wheelEvent(self, event: QWheelEvent):
 		self.horizontalScrollBar().wheelEvent(event)
 		
-	#set scroll bar style
+	# set scroll bar style
 	def setStyle(self, newstyle):
 		self.style = newstyle
 		self.setStyleSheet(self.style)
 
-	#calculate exact minimum width within the area and set it
+	# calculate exact minimum width within the area and set it
 	def eventFilter(self, object, event):
 		if object is not None:
 			if object == self.widget():
