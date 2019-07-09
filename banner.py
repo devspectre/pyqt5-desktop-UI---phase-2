@@ -5,7 +5,8 @@ from PyQt5.QtWidgets import *
 from link import Link
 
 class Banner(QFrame):
-	""" Banner widget derived from QFrame to contain a preferred sign, brief desc, etc"""
+	""" Banner widget derived from QFrame to contain a preferred sign, brief desc, etc
+	"""
 
 	def __init__(self, parent = None):
 		QFrame.__init__(self, parent)

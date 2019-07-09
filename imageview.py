@@ -7,7 +7,9 @@ from thumbnail import Thumbnail
 from fullimageview import FullImageView
 
 class ImageView(QFrame):
-	""" ImageViewer widget derived from QFrame which contains a main image frame to show selected image and small thumbnail frames"""
+	""" ImageViewer widget derived from QFrame which contains a main 
+		image frame to show selected image and small thumbnail frames
+	"""
 	def __init__(self, parent = None):
 		QFrame.__init__(self, parent)
 
