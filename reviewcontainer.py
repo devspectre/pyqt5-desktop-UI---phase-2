@@ -8,7 +8,7 @@ from submitdialog import SubmitDialog
 from verticalscrollarea import *
 
 class ReviewContainer(QFrame):
-	"""Review Container widget derived from QFrame which contains a header with a text and a button and serveral review cards"""
+	""" Review Container widget derived from QFrame which contains a header with a text and a button and serveral review cards"""
 	def __init__(self, parent = None):
 		QFrame.__init__(self, parent)
 
@@ -46,7 +46,7 @@ class ReviewContainer(QFrame):
 		self.setAutoFillBackground(True)
 		self.setStyleSheet("#ReviewContainer{background-color: white;}")
 
-	#this slot is called when the "Write Review" button is clicked
+	# this slot is called when the "Write Review" button is clicked
 	@pyqtSlot()
 	def onWriteReview(self):
 		dlg = SubmitDialog()
@@ -59,13 +59,13 @@ class ReviewContainer(QFrame):
 			newCard.setReviewDate(QDate.currentDate())
 			self.addCard(newCard)
 
-	#add new card with an instance
+	# add new card with an instance
 	def addCard(self, card):
 		self.mCardList.append(card)
 		self.mCardLayout.addWidget(card, 0, Qt.AlignTop)
 		card.showComment()
 
-	#add new card with detailed info
+	# add new card with detailed info
 	def addCardByText(self, rating = 5.0, title = "", desc = ""):
 		newCard = ReviewCard(self.mCardFrame)
 		newCard.setReviewTitle(title)
@@ -73,7 +73,7 @@ class ReviewContainer(QFrame):
 		newCard.setReviewComment(desc)
 		self.addCard(newCard)
 
-	#remove all cards
+	# remove all cards
 	def removeAll(self):
 		for card in self.mCardList:
 			self.mCardLayout.removeWidget(card)

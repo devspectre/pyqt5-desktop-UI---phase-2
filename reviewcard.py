@@ -8,7 +8,7 @@ from elidelabel import ElideLabel
 from autotextview import AutoTextView
 
 class ReviewCard(QFrame):
-	"""Review Card widget derived from QFrame which contains star rating, reviewed date, reviewer, title, comment and two text buttons"""
+	""" Review Card widget derived from QFrame which contains star rating, reviewed date, reviewer, title, comment and two text buttons"""
 	def __init__(self, parent = None):
 		QFrame.__init__(self, parent)
 
@@ -87,10 +87,10 @@ class ReviewCard(QFrame):
 	def setReviewRating(self, rating):
 		self.mRating.setRating(float(rating))
 
-	#set rated text with formatted QDateTime variable
+	# set rated text with formatted QDateTime variable
 	def setReviewDate(self, date):
 		self.mRatedDate.setText(date.toString("ddd, MMM d, yyyy"))
-	#set rated text with pure string
+	# set rated text with pure string
 	def setReviewDateString(self, str):
 		self.mRatedDate.setText(str)
 

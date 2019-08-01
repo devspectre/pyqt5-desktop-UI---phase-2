@@ -6,9 +6,9 @@ from reviewbutton import ReviewButton
 from enum import Enum
 
 class ReviewHeader(QFrame):
-	"""Customized Header Widget derived from QFrame for Reviews"""
+	""" Customized Header Widget derived from QFrame for Reviews"""
 
-	#this signal is emitted when the button is clicked
+	# this signal is emitted when the button is clicked
 	writeReviewClicked = pyqtSignal()
 	def __init__(self, parent = None):
 		QFrame.__init__(self, parent)
@@ -28,12 +28,12 @@ class ReviewHeader(QFrame):
 		self.setObjectName("ReviewFrame")
 		self.setStyleSheet("#ReviewFrame{background: qlineargradient(spread:pad, x1:0 y1:0, x2:1 y2:1, stop:0 rgba(225, 225, 225, 255), stop:1 rgba(243, 243, 243, 255));}")
 
-	#this slot is called when the button is called
+	# this slot is called when the button is called
 	@pyqtSlot()
 	def onReviewButton(self):
 		self.writeReviewClicked.emit()
 
-	#set the caption
+	# set the caption
 	def setCaption(self, caption):
 		self.mCaption.setText(caption)
 

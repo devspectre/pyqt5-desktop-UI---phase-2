@@ -5,9 +5,9 @@ from PyQt5.QtGui import *
 from enum import Enum
 
 class ReviewButton(QPushButton):
-	"""Button with customized styles"""
+	""" Button with customized styles"""
 
-	#predefined styles to stylize the button
+	# predefined styles to stylize the button
 	class BUTTON_STYLE(Enum):
 		NORMAL = "#Button{color: rgba(0, 120, 215, 255); border: 1px solid rgba(0, 120, 215, 255); padding: 9px 25px 9px 25px}"
 		HOVER = "#Button{color: white; background: rgba(0, 108, 194, 255); border: 1px solid rgba(0, 120, 215, 255); padding: 9px 25px 9px 25px}"
@@ -32,7 +32,7 @@ class ReviewButton(QPushButton):
 		self.setFixedHeight(40)
 		self.setGraphicsEffect(self.mGraphicsEffect)
 
-	#button effect
+	# button hover effect
 	def enterEvent(self,event):
 		txt = self.text().lower()
 		if txt == "cancel" or txt == "close" or txt == "exit" or txt == "reject":
@@ -40,12 +40,12 @@ class ReviewButton(QPushButton):
 		else:
 			self.setStyleSheet(self.BUTTON_STYLE.HOVER.value)
 
-	#button effect
+	# button effect
 	def leaveEvent(self,event):
 		self.setStyleSheet(self.BUTTON_STYLE.NORMAL.value)
 		self.mGraphicsEffect.setEnabled(False)
 
-	#button effect
+	# button press effect
 	def mousePressEvent(self, event):
 		QPushButton.mousePressEvent(self, event)
 		txt = self.text().lower()
@@ -57,7 +57,7 @@ class ReviewButton(QPushButton):
 			self.setStyleSheet(self.BUTTON_STYLE.DOWN.value)
 		self.mGraphicsEffect.setEnabled(True)
 
-	#button effect
+	# button effect
 	def mouseReleaseEvent(self, event):
 		QPushButton.mouseReleaseEvent(self, event)	
 		self.setStyleSheet(self.BUTTON_STYLE.NORMAL.value)	
