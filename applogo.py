@@ -16,16 +16,3 @@ class AppLogo(QLabel):
 		self.setObjectName("AppLogo")
 		self.setStyleSheet("#AppLogo{border: 1px solid lightgrey; padding: 5px;}")
 
-if __name__ == "__main__":
-	app = QApplication(sys.argv)
-	widget = QWidget()
-	widget.setFixedSize(500, 500)
-
-	logo = AppLogo(widget)
-	logo.setPixmap(QPixmap("./img/large.png"))
-	logo.setGeometry(100, 100, 300, 300)
-	logo.setAutoFillBackground(True)
-
-	widget.show()
-
-	sys.exit(app.exec())

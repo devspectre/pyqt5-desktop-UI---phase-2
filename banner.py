@@ -75,16 +75,4 @@ class Banner(QFrame):
 		self.mLink.setDefaultColor(color)
 		self.mLink.setHoverColor(color)
 
-if __name__ == "__main__":
-	app = QApplication(sys.argv)
-	widget = QWidget()
-	vbox = QVBoxLayout(widget)
-	ba = Banner(widget)
-	#ba.setBannerTextColor("green;")
-	#ba.setBannerLinkColor("red;")
-	#ba.setBannerLinkFont(QFont("Comic Sans MS", 15))
-	vbox.addWidget(ba)
-	widget.show()
-	sys.exit(app.exec())
-
 

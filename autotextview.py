@@ -122,15 +122,3 @@ class AutoTextView(QPlainTextEdit):
 		# scroll to top
 		self.moveCursor(QTextCursor.Start)
 		self.ensureCursorVisible()
-
-if __name__ == "__main__":
-	app = QApplication(sys.argv)
-	widget = QWidget()
-	#widget.setFixedSize(600, 700)
-	vbox = QVBoxLayout(widget)
-	at = AutoTextView(widget)
-	at.appendPlainText("234123kjhwrfjksdhafohsd0rt9sdafhsdakjfhsdakjfhskdjhf05483029840923oehrljkdshafljkasdhfdsloauhfuoihiouhiouh2u958i309ruowieajfoipdasjfoasijdflkdncw90rtu-932u52903uripoejkfndsalkfsadf0923j")
-	at.setFont(QFont("SegeoUI", 12, QFont.Light))
-	vbox.addWidget(at)
-	widget.show()
-	sys.exit(app.exec())
