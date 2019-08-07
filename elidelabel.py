@@ -57,13 +57,3 @@ class ElideLabel(QLabel):
 					break
 			textLayout.endLayout()
 
-if __name__ == '__main__':
-	app = QApplication(sys.argv)
-	widget = QWidget()
-	widget.setFixedSize(500, 500)
-	el = ElideLabel(widget, "Able was I ere I saw Elba")
-
-	el.setGeometry(100, 100, 100, 30)
-	el.setElideMode(1)
-	widget.show()
-	sys.exit(app.exec())

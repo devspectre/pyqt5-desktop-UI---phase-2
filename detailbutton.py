@@ -46,12 +46,3 @@ class DetailButton(QPushButton):
 
 	def setText(self, text):
 		QPushButton.setText(self, text.upper() if self.isUpper else text)
-
-if __name__ == "__main__":
-	app = QApplication(sys.argv)
-	widget = QWidget()
-	widget.setFixedSize(500, 500)
-	button = DetailButton("Contact Me", widget)
-	button.setGeometry(190, 235, 150, 40)
-	widget.show()
-	sys.exit(app.exec())

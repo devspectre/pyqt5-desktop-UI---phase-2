@@ -201,13 +201,3 @@ class FullImageView(MovableDialog):
 			self.onPrev()
 		elif pkey == Qt.Key_Right or pkey == Qt.Key_Down or pkey == Qt.Key_PageDown:
 			self.onNext()
-
-if __name__ == "__main__":
-	app = QApplication(sys.argv)
-	widget = QWidget()
-	widget.setFixedSize(1024, 768)
-	full = FullImageView()
-	full.setResource("./img/spectre.jpg")
-	widget.show()
-	full.exec()
-	sys.exit(app.exec())

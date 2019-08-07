@@ -51,16 +51,3 @@ class CloseButton(QFrame):
 		self.setStyleSheet(CloseButtonStyle.Normal.value)
 		if self.mIsIn:
 			self.clicked.emit()
-
-if __name__ == '__main__':
-	app = QApplication(sys.argv)
-	widget = QWidget()
-	widget.setFixedSize(500, 500)
-	widget.setObjectName("widget")
-	widget.setAutoFillBackground(True)
-	widget.setStyleSheet("#widget{background-color: white}")
-	appcard = CloseButton(widget)
-	#appcard.setBackgroundImage("./img/card/back.png")
-	appcard.setGeometry(100, 100, appcard.width(), appcard.height())
-	widget.show()
-	sys.exit(app.exec())
