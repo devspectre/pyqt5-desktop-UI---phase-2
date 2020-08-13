@@ -9,7 +9,7 @@ class Banner(QFrame):
 	"""
 
 	def __init__(self, parent = None):
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mIcon = QLabel(self)
 		self.mIcon.setScaledContents(True)

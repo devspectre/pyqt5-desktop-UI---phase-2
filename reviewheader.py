@@ -11,7 +11,7 @@ class ReviewHeader(QFrame):
 	# this signal is emitted when the button is clicked
 	writeReviewClicked = pyqtSignal()
 	def __init__(self, parent = None):
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mCaption = QLabel("User Reviews", self)
 		self.mCaption.setFont(QFont("SegoeUI", 12, QFont.Normal))

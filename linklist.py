@@ -11,7 +11,7 @@ class LinkList(QFrame):
 	#this signal is emitted when user click one of links
 	itemClicked = pyqtSignal(str)
 	def __init__(self, parent = None, text = ""):
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mList = []
 		self.mListFont = QFont("SegeoUI", 10, QFont.Light)

@@ -10,7 +10,7 @@ from autotextview import AutoTextView
 class ReviewCard(QFrame):
 	""" Review Card widget derived from QFrame which contains star rating, reviewed date, reviewer, title, comment and two text buttons"""
 	def __init__(self, parent = None):
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mShowAll = False
 

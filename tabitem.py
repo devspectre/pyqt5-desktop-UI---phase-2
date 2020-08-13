@@ -20,7 +20,7 @@ class TabItem(QFrame):
 	# this signal is emitted when click
 	clicked = pyqtSignal(int)
 	def __init__(self, parent = None, text = "", id = -1):
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mId = id
 		self.mIsIn = False

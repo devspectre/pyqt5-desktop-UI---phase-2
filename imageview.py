@@ -11,7 +11,7 @@ class ImageView(QFrame):
 		image frame to show selected image and small thumbnail frames
 	"""
 	def __init__(self, parent = None):
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mFullImageView = FullImageView()
 		self.mFullImageView.prevRequested.connect(self.OnPrevRequested)

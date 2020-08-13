@@ -19,7 +19,7 @@ class FullImageView(MovableDialog):
 	nextRequested = pyqtSignal()
 
 	def __init__(self, parent = None):
-		QDialog.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mMaxWidth = 1280
 		self.mMaxHeight = 800

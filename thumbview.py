@@ -10,7 +10,7 @@ class ThumbView(HorizontalScrollArea):
 
 	thumbChanged = pyqtSignal(int)
 	def __init__(self, parent = None):
-		HorizontalScrollArea.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mCurrentId = -1
 		self.mAssignedId = 0

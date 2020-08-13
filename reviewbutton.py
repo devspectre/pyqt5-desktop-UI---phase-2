@@ -16,7 +16,7 @@ class ReviewButton(QPushButton):
 		CANCEL_DOWN = "#Button{color: rgba(215, 120, 0, 255); background-color: rgb(243, 243, 243); border: 1px solid rgba(215, 120, 0, 255); padding: 9px 25px 9px 25px;}"
 
 	def __init__(self, parent = None, txt = ""):
-		QPushButton.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mGraphicsEffect = QGraphicsDropShadowEffect(self)
 		self.mGraphicsEffect.setBlurRadius(5)

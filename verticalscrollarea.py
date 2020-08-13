@@ -225,7 +225,7 @@ class VerticalScrollArea(QScrollArea):
 		width has to be adjusted to fit the screen resolution"""
 
 	def __init__(self, parent = None):
-		QScrollArea.__init__(self, parent)
+		super().__init__(parent)
 
 		self.style = VSCROLL_STYLE.NARROW.value
 

@@ -14,7 +14,7 @@ class CloseButton(QFrame):
 
 	clicked = pyqtSignal()
 	def __init__(self, parent = None):
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mStyle = ""
 		self.mIsIn = False

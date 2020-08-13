@@ -7,7 +7,7 @@ class ElideLabel(QLabel):
 	""" A Label widget derived from QLabel and implementing its
        own paintEvent to prevent text overflowing"""
 	def __init__(self, parent = None, txt = ""):
-		QLabel.__init__(self, txt, parent)
+		super().__init__(txt, parent)
 
 		self.elideMode = 0
 		self.lines = 0

@@ -14,7 +14,7 @@ class YoutubeFrame(QFrame):
 
 	def __init__(self, parent = None):
 		QWebEngineSettings.globalSettings().setAttribute(QWebEngineSettings.PluginsEnabled,True)
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mSrcUrl = ""
 		self.mMaxWidth = 720

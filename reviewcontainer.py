@@ -10,7 +10,7 @@ from verticalscrollarea import *
 class ReviewContainer(QFrame):
 	""" Review Container widget derived from QFrame which contains a header with a text and a button and serveral review cards"""
 	def __init__(self, parent = None):
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mCardList = []
 

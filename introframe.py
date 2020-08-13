@@ -102,7 +102,7 @@ class IntroFrame(QFrame):
 		app description widget is capable of both loading plain text and html file
 	"""
 	def __init__(self, parent = None):
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mBanner = Banner(self)
 

@@ -14,7 +14,7 @@ class DetailBoard(QFrame):
 		I hope you to customize it totally.
 	"""
 	def __init__(self, parent = None):
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mLayout = QVBoxLayout(self)
 		self.mLayout.setContentsMargins(0, 0, 0, 0)
@@ -111,3 +111,24 @@ class DetailBoard(QFrame):
 			self.mOverviewFrame.hide()
 
 
+if __name__ == "__main__":
+	app = QApplication(sys.argv)
+
+	window = QMainWindow()
+	detail = DetailBoard(window)
+	detail.setAppName("Deep Cognition AI Application")
+	detail.setAppNameFont(QFont("Roboto", 24, QFont.Light))
+	detail.setAppNameBriefFont(QFont("Roboto", 16, QFont.Light))
+	window.setCentralWidget(detail)
+	window.show()
+	#before getting the geometry, window.show() or showMaximized() 
+	# must be called to get the correct value
+	desktop = QApplication.desktop()
+	width = desktop.availableGeometry().width()
+	height = desktop.availableGeometry().height()
+	#the mentioned warning comes out because window size is too small or bigger than available geometry
+	#To avoid the warning, need to set minimum and maximum size of widget manually.
+	window.setMinimumSize(640, 480)
+	window.setMaximumSize(width, height)
+	window.showMaximized()
+	sys.exit(app.exec())

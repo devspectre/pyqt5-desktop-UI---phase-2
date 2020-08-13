@@ -17,7 +17,7 @@ class Thumbnail(QLabel):
 	# this signal is emitted when clicked on
 	clicked = pyqtSignal(int)
 	def __init__(self, parent = None, id = -1, imgPath = ""):
-		QLabel.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mImg = imgPath
 		self.mUri = ""# this is only useful when mType is 1

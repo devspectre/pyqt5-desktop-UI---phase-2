@@ -12,7 +12,7 @@ from verticalscrollarea import VSCROLL_STYLE
 
 class SidePanel(QFrame):
 	def __init__(self, parent = None):
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.setObjectName("SidePanel")
 		self.setStyleSheet("#SidePanel{background: white;}")

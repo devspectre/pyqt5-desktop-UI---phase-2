@@ -7,6 +7,7 @@ class MovableDialog(QDialog):
 	""" Dialog widget derived from Dialog which is movable with mouse dragging"""
 
 	def __init__(self, parent = None):
+		super().__init__(parent)
 		self.mIsPressed = False
 		self.mXDiff = 0
 		self.mYDiff = 0

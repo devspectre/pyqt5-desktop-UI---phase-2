@@ -17,7 +17,7 @@ class AutoTextView(QPlainTextEdit):
 	moreThanLimit = pyqtSignal()
 
 	def __init__(self, parent = None):
-		QPlainTextEdit.__init__(self, parent)
+		super().__init__(parent)
 		
 		self.mDefaultLineCount = 3
 		self.mShowAll = False

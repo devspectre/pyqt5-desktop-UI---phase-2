@@ -14,7 +14,7 @@ class Link(ElideLabel):
 	linkActivated = pyqtSignal(int)
 
 	def __init__(self, parent = None, text = "", uri = ""):
-		ElideLabel.__init__(self, parent, text)
+		super().__init__(parent, text)
 
 		self.mId = -1;
 		self.mUri = uri

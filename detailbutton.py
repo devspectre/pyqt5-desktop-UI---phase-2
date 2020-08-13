@@ -16,7 +16,7 @@ class DetailButton(QPushButton):
 		DOWN = "#Button{color: white; background-color: rgba(0, 84, 151, 255); border: 1px solid rgba(0, 120, 215, 255); padding: 9px auto 9px auto}"
 
 	def __init__(self, text = "", parent = None):
-		QPushButton.__init__(self, text, parent)
+		super().__init__(text, parent)
 
 		self.isUpper = True
 		

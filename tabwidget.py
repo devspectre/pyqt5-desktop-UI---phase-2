@@ -10,7 +10,7 @@ class TabWidget(QFrame):
 	# this signal is emitted when one of tab items is clicked
 	tabChanged = pyqtSignal(int)
 	def __init__(self, parent = None):
-		QFrame.__init__(self, parent)
+		super().__init__(parent)
 
 		self.mAssignedId = 0
 		self.mList = []
